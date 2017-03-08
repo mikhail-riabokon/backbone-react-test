@@ -1,4 +1,4 @@
-import wrapInCollection from 'helpers/wrapInCollection';
+import withCollection from 'helpers/withCollection';
 import Sidebar from './components/Sidebar';
 import users from 'collections/users';
 import React from 'react';
@@ -14,4 +14,4 @@ class Home extends React.Component {
   }
 }
 
-export default wrapInCollection(Home, users);
+export default withCollection(Home, users);
