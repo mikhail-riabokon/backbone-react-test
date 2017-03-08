@@ -10,11 +10,11 @@ Backbone.ajax = function (request) {
   const updates = {
     url: `https://api.pipedrive.com/v1${request.url}`,
     data,
-  }
+  };
   const updatedRequest = {
     ...request,
     ...updates,
-  }
+  };
 
   return originAJAXMethod(updatedRequest);
 }
