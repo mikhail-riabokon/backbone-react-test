@@ -8,8 +8,6 @@ export default function withCollection(WrappedComponent, collection) {
       this.state = {
         models: [],
       };
-
-      collection.on('add', this.onModelsAdded, this);
     }
 
     onModelsAdded() {
@@ -17,12 +15,8 @@ export default function withCollection(WrappedComponent, collection) {
     }
 
     componentDidMount() {
-      // TODO: add logic to check is was fetched before
+      collection.once('sync', this.onModelsAdded, this);
       collection.fetch();
-    }
-
-    componentWillUnmount() {
-      collection.off('add', this.onModelsAdded, this);
     }
 
     render() {

@@ -3,7 +3,7 @@ import PersonDeals from '../collections/PersonDeals';
 
 class Person extends Backbone.Model {
   initialize() {
-    this.set('deals', new PersonDeals(null, { dealId: 1 }));
+    this.set('deals', new PersonDeals(null, { dealId: this.get('id') }));
   }
 
   get idAttribute() {
