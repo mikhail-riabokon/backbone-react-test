@@ -1,12 +1,11 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
-import Home from './screens/Home';
-import PersonInfo from './screens/Home/screens/PersonInfo';
-import App from './App';
+import { Route, Redirect } from 'react-router';
+import App from './screens/App';
+import PersonInfo from './screens/App/screens/PersonInfo';
 
 export default(
   <Route path="/" component={ App }>
-    <IndexRoute component={ Home }/>
     <Route path="person/:id" component={ PersonInfo }/>
+    <Redirect from="person(/:id)" to="/" />
   </Route>
 );
