@@ -1,7 +1,4 @@
-import withCollection from 'helpers/withCollection';
 import Sidebar from './components/Sidebar';
-import persons from 'collections/persons';
-import Backbone from 'lib/backbone';
 import React from 'react';
 
 function App(props) {
@@ -10,7 +7,7 @@ function App(props) {
       <div className="header">
         <h2>Header</h2>
       </div>
-      <Sidebar personsModels={props.models} />
+      <Sidebar />
       <div>
         { props.children }
       </div>
@@ -18,10 +15,4 @@ function App(props) {
   );
 }
 
-App.propTypes = {
-  models: React.PropTypes.arrayOf(
-    React.PropTypes.instanceOf(Backbone.Model)
-  ).isRequired,
-};
-
-export default withCollection(App, persons);
+export default App;

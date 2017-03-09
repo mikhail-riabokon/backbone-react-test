@@ -1,6 +1,8 @@
 import React from 'react';
 import Backbone from 'lib/backbone';
 import { withRouter } from 'react-router';
+import withCollection from 'helpers/withCollection';
+import persons from 'collections/persons';
 
 function Sidebar(props) {
   const renderUser = (personModel) => {
@@ -16,7 +18,7 @@ function Sidebar(props) {
   return (
     <div>
       <h2>Sidebar, users</h2>
-      { props.personsModels.map(renderUser) }
+      { props.models.map(renderUser) }
     </div>
   );
 }
@@ -25,9 +27,9 @@ Sidebar.propTypes = {
   router: React.PropTypes.shape({
     push: React.PropTypes.func.isRequired
   }).isRequired,
-  personsModels: React.PropTypes.arrayOf(
+  models: React.PropTypes.arrayOf(
     React.PropTypes.instanceOf(Backbone.Model)
   ).isRequired,
 };
 
-export default withRouter(Sidebar);
+export default withCollection(withRouter(Sidebar), persons);
