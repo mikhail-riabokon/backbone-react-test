@@ -17,6 +17,7 @@ export default function withCollection(WrappedComponent, collection) {
     }
 
     componentDidMount() {
+      // TODO: add logic to check is was fetched before
       collection.fetch();
     }
 

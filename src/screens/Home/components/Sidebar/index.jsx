@@ -1,18 +1,23 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
-const renderUser = (userModel) => {
-  return <h3 key={userModel.cid}>{userModel.get('name')}</h3>;
-};
+function Sidebar(props) {
+  const renderUser = (userModel) => {
+    const userId = userModel.get('id');
 
-class Sidebar extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>Sidebar, users</h2>
-        { this.props.users.map(renderUser) }
-      </div>
-    );
-  }
+    const onClick = () => {
+      props.router.push(`/person/${userId}`);
+    };
+
+    return <h3 key={userId} onClick={onClick}>{userModel.get('name')}</h3>;
+  };
+
+  return (
+    <div>
+      <h2>Sidebar, users</h2>
+      { props.users.map(renderUser) }
+    </div>
+  );
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
