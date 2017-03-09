@@ -8,7 +8,7 @@ function Home(props) {
   return (
     <div>
       <h1>Home</h1>
-      <Sidebar users={props.models} />
+      <Sidebar personsModels={props.models} />
     </div>
   );
 }
