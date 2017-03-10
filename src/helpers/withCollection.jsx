@@ -15,8 +15,20 @@ export default function withCollection(WrappedComponent, collection) {
     }
 
     componentDidMount() {
+      collection.once({
+        request: function () {
+          this.fetching = true;
+        },
+        'sync error': function () {
+          this.fetching = false;
+        }
+      });
+
       collection.once('sync', this.onModelsAdded, this);
-      collection.fetch();
+
+      if (!collection.fetching) {
+        collection.fetch();
+      }
     }
 
     render() {
