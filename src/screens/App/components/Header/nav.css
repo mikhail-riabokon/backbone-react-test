@@ -1,0 +1,12 @@
+.nav .nav__item {
+  line-height: 48px;
+  display: flex;
+}
+
+.nav .nav__item > * {
+  align-self: center;
+}
+
+.nav .nav__item--with-text {
+  color: #fff;
+}

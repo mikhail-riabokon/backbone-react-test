@@ -1,4 +1,7 @@
 @import "./icons/index.css";
+@import "./userProfile.css";
+@import "./logo.css";
+@import "./nav.css";
 
 .header {
   background-color: #343434;
@@ -8,85 +11,4 @@
 .header > * {
   display: flex;
   height: 48px;
-}
-
-.logo {
-  margin: 0 0 0 15px;
-  padding: 0;
-}
-
-.logo .logo__link {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 24px;
-  line-height: 48px;
-}
-
-.nav .nav__item {
-  line-height: 48px;
-  display: flex;
-}
-
-.nav .nav__item > * {
-  align-self: center;
-}
-
-.nav .nav__item--with-text {
-  color: #fff;
-}
-
-
-.user-profile {
-  min-width: 150px;
-  margin-left: auto;
-  align-self: center;
-}
-
-.user-profile .user-profile__image--no-image {
-  width: 35px;
-  height: 35px;
-  min-width: 35px;
-  border-radius: 50%;
-  background-color: #72777c;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: auto;
-}
-
-.user-profile .user-profile__image--no-image::before,
-.user-profile .user-profile__image--no-image::after {
-  content: '';
-  background-color: #888e94;
-  align-self: center;
-}
-
-.user-profile .user-profile__image--no-image::before {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-top: 10px;
-}
-
-.user-profile .user-profile__image--no-image::after {
-  width: 20px;
-  height: 10px;
-  border-radius: 35% 35% 50% 50%;
-  margin-top: 2px;
-}
-
-.user-profile .user-profile__info {
-  margin: auto 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.user-profile .user-profile__info .name {
-  color: #fff;
-  font-size: 14px;
-}
-
-.user-profile .user-profile__info .company {
-  color: #c2c8cd;
-  font-size: 11px;
 }
