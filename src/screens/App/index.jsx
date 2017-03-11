@@ -1,12 +1,12 @@
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 import React from 'react';
+import './index.css';
 
 function App(props) {
   return (
     <div className="app">
-      <div className="header">
-        <h2>Header</h2>
-      </div>
+      <Header />
       <Sidebar />
       <div>
         { props.children }
