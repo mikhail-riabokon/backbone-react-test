@@ -3,24 +3,44 @@ import Backbone from 'lib/backbone';
 import { withRouter } from 'react-router';
 import withCollection from 'helpers/withCollection';
 import persons from 'collections/persons';
+import PersonItem from './components/PersonItem';
+import './index.css';
 
-function Sidebar(props) {
-  const renderUser = (personModel) => {
-    const userId = personModel.get('id');
+class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
 
-    const onClick = () => {
-      props.router.push(`/person/${userId}`);
+    this.state = {
+      selectedId: null,
     };
 
-    return <h3 key={userId} onClick={onClick}>{personModel.get('name')}</h3>;
-  };
+    this.renderPersonItem = this.renderPersonItem.bind(this);
+    this.onPersonClicked = this.onPersonClicked.bind(this);
+  }
 
-  return (
-    <div>
-      <h2>Sidebar, users</h2>
-      { props.models.map(renderUser) }
-    </div>
-  );
+  onPersonClicked(personId) {
+    this.setState({ selectedId: personId }, () => {
+      this.props.router.push(`/person/${personId}`);
+    });
+  }
+
+  renderPersonItem(personModel, index) {
+    return (
+      <PersonItem
+        key={index}
+        model={personModel}
+        onClick={this.onPersonClicked}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <div className="sidebar">
+        { this.props.models.map(this.renderPersonItem) }
+      </div>
+    );
+  }
 }
 
 Sidebar.propTypes = {

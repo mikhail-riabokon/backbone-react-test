@@ -7,9 +7,11 @@ function App(props) {
   return (
     <div className="app">
       <Header />
-      <Sidebar />
-      <div>
-        { props.children }
+      <div className="content">
+        <Sidebar />
+        <div>
+          { props.children }
+        </div>
       </div>
     </div>
   );
