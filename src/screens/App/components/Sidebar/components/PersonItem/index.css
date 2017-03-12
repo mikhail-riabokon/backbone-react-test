@@ -1,0 +1,25 @@
+.person-item {
+  border-bottom: 1px solid #d6d6d6;
+  background: linear-gradient(to bottom, #fefefe, #f6f6f6);
+  padding: 9px 15px;
+  cursor: pointer;
+}
+
+.person-item .person-item__name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.person-item .person-item__company {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.person-item.person-item--selected {
+  color: #fff;
+  background: linear-gradient(to bottom, #4ba4dd, #2b7dc4);
+}
+
+.person-item.person-item--selected .person-item__name {
+  text-shadow: 0 1px 0 #343434;
+}

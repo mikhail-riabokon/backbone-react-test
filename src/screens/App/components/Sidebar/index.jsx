@@ -11,7 +11,7 @@ class Sidebar extends React.Component {
     super(props);
 
     this.state = {
-      selectedId: null,
+      selectedId: 2,
     };
 
     this.renderPersonItem = this.renderPersonItem.bind(this);
@@ -30,6 +30,7 @@ class Sidebar extends React.Component {
         key={index}
         model={personModel}
         onClick={this.onPersonClicked}
+        isSelected={personModel.get('id') === this.state.selectedId}
       />
     );
   }
