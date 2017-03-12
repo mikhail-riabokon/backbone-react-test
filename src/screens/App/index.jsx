@@ -9,7 +9,7 @@ function App(props) {
       <Header />
       <div className="content">
         <Sidebar />
-        <div>
+        <div className="route-wrapper">
           { props.children }
         </div>
       </div>

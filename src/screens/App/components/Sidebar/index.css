@@ -1,6 +1,7 @@
 .sidebar {
   height: calc(100vh - 48px); /* 48px is a header height */
   width: 290px;
+  min-width: 290px;
   background-color: #fff;
   box-shadow: 0px 0px 2px #909090;
   overflow-y: auto;
