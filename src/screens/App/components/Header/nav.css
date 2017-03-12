@@ -1,6 +1,11 @@
 .nav .nav__item {
   line-height: 48px;
   display: flex;
+  min-width: 40px;
+  margin-left: 30px;
+}
+.nav .nav__item:first-child {
+  margin-left: 0;
 }
 
 .nav .nav__item > * {
@@ -9,4 +14,13 @@
 
 .nav .nav__item--with-text {
   color: #fff;
+  min-width: 100px;
+}
+
+.nav .nav__item--with-text .text {
+  margin-left: 10px;
+}
+
+.nav .nav__item--with-text:first-child {
+  min-width: 80px;
 }

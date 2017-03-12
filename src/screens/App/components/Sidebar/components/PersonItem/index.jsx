@@ -2,8 +2,13 @@ import React from 'react';
 import Backbone from 'lib/backbone';
 
 function PersonItem(props) {
+  const onClick = () => props.onClick(props.model.get('id'));
+
   return (
-    <h1 onClick={ () => { props.onClick(props.model.get('id')) } }>Person item</h1>
+    <div className="person-item" onClick={onClick}>
+      <div className="person-item__name">Mikhail Riabokon</div>
+      <div className="person-item__company">test</div>
+    </div>
   );
 }
 
