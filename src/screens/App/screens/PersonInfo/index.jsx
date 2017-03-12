@@ -7,6 +7,11 @@ import './index.css';
 function PersonInfo(props) {
   return (
     <div className="person-info">
+      <div className="person-info__sections-title">
+        <h1 className="person-details-title">Mikhail Riabokon</h1>
+        <h2 className="person-deals-title">Deals</h2>
+      </div>
+
       <div className="person-info__sections">
         <div className="person__details">
           <div className="detail">

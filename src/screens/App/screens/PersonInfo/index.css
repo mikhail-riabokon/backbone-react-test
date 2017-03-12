@@ -5,7 +5,25 @@
   border-radius: 4px;
   box-shadow: 0 0px 1px 0px rgba(0,0,0, 1);
   background-color: #fff;
+  margin-top: 20px;
 }
+
+.person-info__sections-title {
+  display: flex;
+}
+
+.person-info__sections-title .person-details-title {
+  max-width: 415px;
+  min-width: 415px;
+  margin: 0;
+}
+
+.person-info__sections-title .person-deals-title {
+  width: 410px;
+  margin: 0 0 0 auto;
+  align-self: flex-end;
+}
+
 
 .person-info__sections .person__details {
   min-width: 300px;
