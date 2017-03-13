@@ -52,10 +52,23 @@ class PersonDetails extends React.Component {
     });
   }
 
-  componentDidMount() {
+  subsribeToActivities() {
     this.props.personModel
       .get('activities')
       .once('activities:fetched', this.setActivities, this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.personModel.get('id') !== nextProps.personModel.get('id')) {
+      this.setState({
+        lastActivity: '',
+        nextActivity: '',
+      }, this.setActivities);
+    }
+  }
+
+  componentDidMount() {
+    this.subsribeToActivities();
   }
 
   getPersonData() {
