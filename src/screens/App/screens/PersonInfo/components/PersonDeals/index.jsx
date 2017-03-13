@@ -1,5 +1,6 @@
 import React from 'react';
 import PersonDeal from './components/PersonDeal';
+import PersonDealModel from 'models/PersonDeal';
 import './index.css';
 
 const getDeal = (dealModel, index) => {
@@ -23,5 +24,12 @@ function PersonDeals(props) {
     </div>
   );
 }
+
+PersonDeals.propTypes = {
+  models: React.PropTypes.arrayOf(
+    React.PropTypes.instanceOf(PersonDealModel)
+  ).isRequired,
+};
+
 
 export default PersonDeals;

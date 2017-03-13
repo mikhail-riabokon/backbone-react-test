@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import PersonModel from 'models/Person';
 import './index.css';
 
 const getPrimaryPersonData = (dataSet) => {
@@ -116,5 +117,9 @@ class PersonDetails extends React.Component {
     );
   }
 }
+
+PersonDetails.propTypes = {
+  personModel: React.PropTypes.instanceOf(PersonModel),
+};
 
 export default PersonDetails;

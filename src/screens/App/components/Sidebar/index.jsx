@@ -1,9 +1,9 @@
 import React from 'react';
-import Backbone from 'lib/backbone';
 import { withRouter } from 'react-router';
 import withCollection from 'helpers/withCollection';
 import persons from 'collections/persons';
 import PersonItem from './components/PersonItem';
+import PersonModel from 'models/Person';
 import './index.css';
 
 class Sidebar extends React.Component {
@@ -69,7 +69,7 @@ Sidebar.propTypes = {
     }).isRequired,
   }).isRequired,
   models: React.PropTypes.arrayOf(
-    React.PropTypes.instanceOf(Backbone.Model)
+    React.PropTypes.instanceOf(PersonModel)
   ).isRequired,
 };
 

@@ -3,13 +3,9 @@ import withCollection from 'helpers/withCollection';
 import persons from 'collections/persons';
 import PersonDetails from './components/PersonDetails';
 import PersonDeals from './components/PersonDeals';
+import PersonModel from 'models/Person';
+import Loading from './components/Loading';
 import './index.css';
-
-function Loading() {
-  return (
-    <p>...loading</p>
-  );
-}
 
 function getPersonInfoLayout(personModel) {
   const Deals = withCollection(PersonDeals, personModel.get('deals'));
@@ -36,5 +32,16 @@ function PersonInfo(props) {
     ? getPersonInfoLayout(personModel)
     : <Loading />;
 }
+
+PersonInfo.propTypes = {
+  router: React.PropTypes.shape({
+    params: React.PropTypes.shape({
+      id: React.PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  models: React.PropTypes.arrayOf(
+    React.PropTypes.instanceOf(PersonModel)
+  ).isRequired,
+};
 
 export default withCollection(PersonInfo, persons);
