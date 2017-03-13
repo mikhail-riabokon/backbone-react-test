@@ -1,12 +1,12 @@
 import React from 'react';
 
 export default function withCollection(WrappedComponent, collection) {
-  return class extends React.Component {
+  return class WithCollectionWrapper extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
-        models: [],
+        models: collection.models,
       };
 
       this.onModelsAdded = this.onModelsAdded.bind(this);

@@ -12,16 +12,17 @@ function Loading() {
 }
 
 function getPersonInfoLayout(personModel) {
+  const Deals = withCollection(PersonDeals, personModel.get('deals'));
+
   return (
     <div className="person-info">
       <div className="person-info__sections-title">
         <h1 className="person-details-title">{ personModel.get('name') }</h1>
         <h2 className="person-deals-title">Deals</h2>
       </div>
-
       <div className="person-info__sections">
         <PersonDetails personModel={ personModel } />
-        <PersonDeals />
+        <Deals />
       </div>
     </div>
   );

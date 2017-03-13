@@ -6,8 +6,6 @@ class PersonActivities extends Backbone.Collection {
     this.activityId = null;
 
     if (options.activities.length) {
-      console.log('fetch');
-
       const allFetches = options.activities.map((activity) => {
         this.setActivityId(activity);
         return this.fetch();
