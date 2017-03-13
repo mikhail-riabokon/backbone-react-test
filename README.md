@@ -1,8 +1,8 @@
 ## Backbone + React test integration based on [Pipedrive API](https://developers.pipedrive.com/docs/api/v1/)
 
 ### Before you start
-* Install Node (6.*.*)
-* Install npm (3.*.*)
+* Install Node (```6.*.*```)
+* Install npm (```3.*.*```)
 
 ### How to start
 * Clone project
