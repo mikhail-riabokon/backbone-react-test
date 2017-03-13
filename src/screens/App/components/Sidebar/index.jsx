@@ -18,6 +18,7 @@ class Sidebar extends React.Component {
 
     this.renderPersonItem = this.renderPersonItem.bind(this);
     this.onPersonClicked = this.onPersonClicked.bind(this);
+    this.onHistoryChanged = this.onHistoryChanged.bind(this);
   }
 
   onPersonClicked(personId) {
@@ -35,6 +36,20 @@ class Sidebar extends React.Component {
         isSelected={personModel.get('id') === this.state.selectedId}
       />
     );
+  }
+
+  onHistoryChanged() {
+    if (!this.props.router.params.id) {
+      this.setState({ selectedId: null });
+    }
+  }
+
+  componentDidMount() {
+    this.unlisten = this.props.router.listen(this.onHistoryChanged);
+  }
+
+  componentWillUnMount() {
+    this.unlisten();
   }
 
   render() {
