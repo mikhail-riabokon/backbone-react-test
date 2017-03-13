@@ -8,6 +8,8 @@ export default function withCollection(WrappedComponent, collection) {
       this.state = {
         models: [],
       };
+
+      this.onModelsAdded = this.onModelsAdded.bind(this);
     }
 
     onModelsAdded() {
@@ -21,10 +23,9 @@ export default function withCollection(WrappedComponent, collection) {
         },
         'sync error': function () {
           this.fetching = false;
-        }
+        },
+        sync: this.onModelsAdded,
       });
-
-      collection.once('sync', this.onModelsAdded, this);
 
       if (!collection.fetching) {
         collection.fetch();
