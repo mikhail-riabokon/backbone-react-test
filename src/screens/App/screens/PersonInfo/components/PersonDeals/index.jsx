@@ -11,11 +11,29 @@ function renderDeal(dealModel) {
 
 function PersonDeals(props) {
   return (
-    <div>
-      <h4>Deals</h4>
-      <div>{ props.models.map(renderDeal) }</div>
+    <div className="person-deals">
+      <div className="person-deal">
+        <div className="company">Title</div>
+        <div className="revenue">Sum</div>
+      </div>
+      <div className="person-deal">
+        <div className="company">Test</div>
+        <div className="revenue">100<span className="currency">$</span></div>
+      </div>
+      <div className="person-deal">
+        <div className="company">Test</div>
+        <div className="revenue">100<span className="currency">$</span></div>
+      </div>
+      <div className="person-deal">
+        <div className="company">Test</div>
+        <div className="revenue">100<span className="currency">$</span></div>
+      </div>
+      <div className="person-deal">
+        <div className="company">Test</div>
+        <div className="revenue">100<span className="currency">$</span></div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default PersonDeals;

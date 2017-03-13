@@ -10,8 +10,10 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
 
+    const selectedPersonId = props.router.params.id && parseInt(props.router.params.id, 10);
+
     this.state = {
-      selectedId: 2,
+      selectedId: selectedPersonId || null,
     };
 
     this.renderPersonItem = this.renderPersonItem.bind(this);
@@ -46,7 +48,10 @@ class Sidebar extends React.Component {
 
 Sidebar.propTypes = {
   router: React.PropTypes.shape({
-    push: React.PropTypes.func.isRequired
+    push: React.PropTypes.func.isRequired,
+    params: React.PropTypes.shape({
+      id: React.PropTypes.string,
+    }).isRequired,
   }).isRequired,
   models: React.PropTypes.arrayOf(
     React.PropTypes.instanceOf(Backbone.Model)

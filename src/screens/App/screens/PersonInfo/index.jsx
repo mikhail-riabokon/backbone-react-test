@@ -1,86 +1,39 @@
 import React from 'react';
 import withCollection from 'helpers/withCollection';
 import persons from 'collections/persons';
-// import PersonDeals from './components/PersonDeals';
+import PersonDetails from './components/PersonDetails';
+import PersonDeals from './components/PersonDeals';
 import './index.css';
 
-function PersonInfo(props) {
+function Loading() {
+  return (
+    <p>...loading</p>
+  );
+}
+
+function getPersonInfoLayout(personModel) {
   return (
     <div className="person-info">
       <div className="person-info__sections-title">
-        <h1 className="person-details-title">Mikhail Riabokon</h1>
+        <h1 className="person-details-title">{ personModel.get('name') }</h1>
         <h2 className="person-deals-title">Deals</h2>
       </div>
 
       <div className="person-info__sections">
-        <div className="person__details">
-          <div className="detail">
-            <div className="detail__key">Phone</div>
-            <div className="detail__value">+111111111111</div>
-          </div>
-          <div className="detail">
-            <div className="detail__key">Email</div>
-            <div className="detail__value">+111111111111</div>
-          </div>
-          <div className="detail">
-            <div className="detail__key">Added</div>
-            <div className="detail__value">+111111111111</div>
-          </div>
-          <div className="detail">
-            <div className="detail__key">Open deals</div>
-            <div className="detail__value">+111111111111</div>
-          </div>
-          <div className="detail">
-            <div className="detail__key">Next activity</div>
-            <div className="detail__value">+111111111111</div>
-          </div>
-          <div className="detail">
-            <div className="detail__key">Last activity</div>
-            <div className="detail__value">+111111111111</div>
-          </div>
-        </div>
-        <div className="person-deals">
-          <div className="person-deal">
-            <div className="company">Title</div>
-            <div className="revenue">Sum</div>
-          </div>
-          <div className="person-deal">
-            <div className="company">Test</div>
-            <div className="revenue">100<span className="currency">$</span></div>
-          </div>
-          <div className="person-deal">
-            <div className="company">Test</div>
-            <div className="revenue">100<span className="currency">$</span></div>
-          </div>
-          <div className="person-deal">
-            <div className="company">Test</div>
-            <div className="revenue">100<span className="currency">$</span></div>
-          </div>
-          <div className="person-deal">
-            <div className="company">Test</div>
-            <div className="revenue">100<span className="currency">$</span></div>
-          </div>
-        </div>
+        <PersonDetails personModel={ personModel } />
+        <PersonDeals />
       </div>
     </div>
   );
 }
 
+function PersonInfo(props) {
+  const personId = parseInt(props.router.params.id, 10);
+  const personModel = props.models.find((model) => model.get('id') === personId);
 
-
-// class PersonInfo extends React.Component {
-//   render() {
-//     const personId = parseInt(this.props.routeParams.id, 10);
-//     const personModel = this.props.models.find((model) => model.get('id') === personId);
-//
-//     if (personModel) {
-//       const Item = withCollection(PersonDeals, personModel.get('deals'));
-//
-//       return <Item />;
-//     } else {
-//       return <h4>Empty</h4>;
-//     }
-//   }
-// }
+  return personModel
+    ? getPersonInfoLayout(personModel)
+    : <Loading />;
+}
 
 export default withCollection(PersonInfo, persons);
