@@ -2,18 +2,30 @@ import React from 'react';
 import Backbone from 'lib/backbone';
 import './index.css';
 
-function PersonItem(props) {
-  const onClick = () => props.onClick(props.model.get('id'));
+const getPersonCompany = (companyName) => {
+  return companyName
+    ? <div className="person-item__company">{ companyName }</div>
+    : null;
+};
+
+const getPersonItemClasses = (isSelected) => {
   let personItemClasses = 'person-item';
 
-  if (props.isSelected) {
+  if (isSelected) {
     personItemClasses += ' person-item--selected';
   }
 
+  return personItemClasses;
+};
+
+
+function PersonItem(props) {
+  const onClick = () => props.onClick(props.model.get('id'));
+
   return (
-    <div className={personItemClasses} onClick={onClick}>
-      <div className="person-item__name">Mikhail Riabokon</div>
-      <div className="person-item__company">test</div>
+    <div className={ getPersonItemClasses(props.isSelected) } onClick={ onClick }>
+      <div className="person-item__name">{ props.model.get('name') }</div>
+      { getPersonCompany(props.model.get('org_name')) }
     </div>
   );
 }
