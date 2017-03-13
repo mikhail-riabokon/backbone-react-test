@@ -5,7 +5,7 @@ const originAJAXMethod = Backbone.ajax;
 Backbone.ajax = function (request) {
   const data = {
     ...request.data,
-    api_token: 'f225d3d46ed3da1db8859d3f8f8d18213ffd70d7',
+    api_token: process.env.REACT_APP_API_KEY,
   };
   const updates = {
     url: `https://api.pipedrive.com/v1${request.url}`,
