@@ -29,8 +29,8 @@ function Header() {
       <div className="user-profile">
         <div className="user-profile__image user-profile__image--no-image"></div>
         <div className="user-profile__info">
-          <div className="name">Mikhail Riabokon</div>
-          <div className="company">Test</div>
+          <div className="name">User name</div>
+          <div className="company">User company</div>
         </div>
       </div>
     </div>
