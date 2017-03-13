@@ -7,6 +7,6 @@
 ### How to start
 * Clone project
 * Go to the project
-* Change Pipedrive API key (REACT_APP_API_KEY) in .env file to yours
+* Change Pipedrive API key ([REACT_APP_API_KEY](https://github.com/mikhail-riabokon/backbone-react-test/blob/master/.env#L2)) in .env file to yours
 * ```npm install```
 * ```npm start```
