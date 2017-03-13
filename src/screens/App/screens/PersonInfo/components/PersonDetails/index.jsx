@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import './index.css';
 
 const getPrimaryPersonData = (dataSet) => {
   const primaryItem = (dataSet && dataSet.find((item) => item.primary));

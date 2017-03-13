@@ -1,0 +1,26 @@
+.person-deal {
+  display: flex;
+  line-height: 30px;
+  border-bottom: 1px solid rgba(52, 52, 52, 0.5);
+  padding: 0 10px;
+}
+
+.person-deal:first-child {
+  font-size: 12px;
+}
+
+.person-deal:last-child {
+  border-bottom: none;
+}
+
+.person-deal .revenue {
+  margin-left: auto;
+}
+
+.person-deal .revenue .currency {
+  margin-left: 5px;
+}
+
+.person-deal:nth-child(odd) {
+  background: linear-gradient(to bottom, #ffffff, #d8d8d8);
+}

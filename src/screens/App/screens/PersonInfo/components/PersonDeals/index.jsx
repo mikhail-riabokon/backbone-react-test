@@ -1,5 +1,6 @@
 import React from 'react';
 import PersonDeal from './components/PersonDeal';
+import './index.css';
 
 const getDeal = (dealModel, index) => {
   return (

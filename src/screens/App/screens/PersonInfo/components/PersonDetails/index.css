@@ -1,0 +1,17 @@
+.person__details {
+  min-width: 300px;
+}
+
+.person__details .detail {
+  display: flex;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.person__details .detail .detail__key {
+  font-weight: 600;
+}
+
+.person__details .detail .detail__value {
+  margin-left: auto;
+}
