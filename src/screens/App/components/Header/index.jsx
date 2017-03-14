@@ -32,7 +32,7 @@ function Header(props) {
         <div className="user-profile__image user-profile__image--no-image"></div>
         <div className="user-profile__info">
           <div className="name">{ props.model.get('name') }</div>
-          <div className="company">User company</div>
+          <div className="company">{ props.model.get('company_name') }</div>
         </div>
       </div>
     </div>

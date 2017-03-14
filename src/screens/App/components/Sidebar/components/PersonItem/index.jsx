@@ -1,5 +1,4 @@
 import React from 'react';
-import Backbone from 'lib/backbone';
 import PersonModel from 'models/Person';
 import './index.css';
 
