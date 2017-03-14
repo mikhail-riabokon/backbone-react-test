@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import './index.css';
+import adminUserModel, { AdminUser } from 'models/adminUser';
+import withModel from 'helpers/withModel';
 
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <div className="logo">
@@ -29,7 +31,7 @@ function Header() {
       <div className="user-profile">
         <div className="user-profile__image user-profile__image--no-image"></div>
         <div className="user-profile__info">
-          <div className="name">User name</div>
+          <div className="name">{ props.model.get('name') }</div>
           <div className="company">User company</div>
         </div>
       </div>
@@ -37,5 +39,8 @@ function Header() {
   );
 }
 
+Header.propTypes = {
+  model: React.PropTypes.instanceOf(AdminUser),
+};
 
-export default Header;
+export default withModel(Header, adminUserModel);
