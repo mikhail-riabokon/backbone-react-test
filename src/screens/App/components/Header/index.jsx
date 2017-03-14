@@ -5,9 +5,9 @@ import './index.css';
 function Header() {
   return (
     <div className="header">
-      <h1 className="logo">
-        <Link className="logo__link" to="/">pipedrive</Link>
-      </h1>
+      <div className="logo">
+        <Link className="logo__link" to="/" />
+      </div>
       <div className="nav">
         <div className="nav__item nav__item--with-text">
           <div className="header__icon header__icon--deals"></div>
