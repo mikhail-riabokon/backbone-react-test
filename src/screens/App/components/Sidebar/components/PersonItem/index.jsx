@@ -1,5 +1,6 @@
 import React from 'react';
 import Backbone from 'lib/backbone';
+import PersonModel from 'models/Person';
 import './index.css';
 
 const getPersonCompany = (companyName) => {
@@ -18,7 +19,6 @@ const getPersonItemClasses = (isSelected) => {
   return personItemClasses;
 };
 
-
 function PersonItem(props) {
   const onClick = () => props.onClick(props.model.get('id'));
 
@@ -31,7 +31,7 @@ function PersonItem(props) {
 }
 
 PersonItem.propTypes = {
-  model: React.PropTypes.instanceOf(Backbone.Model).isRequired,
+  model: React.PropTypes.instanceOf(PersonModel).isRequired,
   isSelected: React.PropTypes.bool.isRequired,
   onClick: React.PropTypes.func.isRequired,
 };
